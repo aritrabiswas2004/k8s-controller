@@ -1,0 +1,6 @@
+apiVersion: stable.dwk/v1
+kind: Countdown
+metadata:
+  name: doomsday
+spec:
+  website_url: https://www.google.com/
