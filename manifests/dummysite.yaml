@@ -1,6 +1,6 @@
 apiVersion: stable.dwk/v1
-kind: Countdown
+kind: DummySite
 metadata:
-  name: doomsday
+  name: my-dum-site
 spec:
   website_url: https://www.google.com/
