@@ -11,12 +11,12 @@ metadata:
   labels:
     app.kubernetes.io/name: controller
     app.kubernetes.io/managed-by: kustomize
-  name: countdown-viewer-role
+  name: dummysite-viewer-role
 rules:
 - apiGroups:
   - stable.dwk.stable.dwk
   resources:
-  - countdowns
+  - dummysites
   verbs:
   - get
   - list
@@ -24,6 +24,6 @@ rules:
 - apiGroups:
   - stable.dwk.stable.dwk
   resources:
-  - countdowns/status
+  - dummysites/status
   verbs:
   - get

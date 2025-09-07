@@ -11,12 +11,12 @@ metadata:
   labels:
     app.kubernetes.io/name: controller
     app.kubernetes.io/managed-by: kustomize
-  name: countdown-editor-role
+  name: dummysite-editor-role
 rules:
 - apiGroups:
   - stable.dwk.stable.dwk
   resources:
-  - countdowns
+  - dummysites
   verbs:
   - create
   - delete
@@ -28,6 +28,6 @@ rules:
 - apiGroups:
   - stable.dwk.stable.dwk
   resources:
-  - countdowns/status
+  - dummysites/status
   verbs:
   - get

@@ -22,7 +22,7 @@ resources:
 # default, aiding admins in cluster management. Those roles are
 # not used by the controller itself. You can comment the following lines
 # if you do not want those helpers be installed with your Project.
-- countdown_admin_role.yaml
-- countdown_editor_role.yaml
-- countdown_viewer_role.yaml
+- dummysite_admin_role.yaml
+- dummysite_editor_role.yaml
+- dummysite_viewer_role.yaml
 

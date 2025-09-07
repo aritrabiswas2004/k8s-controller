@@ -15,7 +15,7 @@ resources:
   controller: true
   domain: stable.dwk
   group: stable.dwk
-  kind: Countdown
+  kind: DummySite
   path: stable.dwk/api/v1
   version: v1
 version: "3"

@@ -178,11 +178,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err := (&controller.CountdownReconciler{
+	if err := (&controller.DummySiteReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Countdown")
+		setupLog.Error(err, "unable to create controller", "controller", "DummySite")
 		os.Exit(1)
 	}
 	// +kubebuilder:scaffold:builder

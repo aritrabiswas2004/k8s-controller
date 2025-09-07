@@ -30,7 +30,7 @@ import (
 	stabledwkv1 "stable.dwk/api/v1"
 )
 
-var _ = Describe("Countdown Controller", func() {
+var _ = Describe("DummySite Controller", func() {
 	Context("When reconciling a resource", func() {
 		const resourceName = "test-resource"
 
@@ -40,13 +40,13 @@ var _ = Describe("Countdown Controller", func() {
 			Name:      resourceName,
 			Namespace: "default", // TODO(user):Modify as needed
 		}
-		countdown := &stabledwkv1.Countdown{}
+		dummysite := &stabledwkv1.DummySite{}
 
 		BeforeEach(func() {
-			By("creating the custom resource for the Kind Countdown")
-			err := k8sClient.Get(ctx, typeNamespacedName, countdown)
+			By("creating the custom resource for the Kind DummySite")
+			err := k8sClient.Get(ctx, typeNamespacedName, dummysite)
 			if err != nil && errors.IsNotFound(err) {
-				resource := &stabledwkv1.Countdown{
+				resource := &stabledwkv1.DummySite{
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      resourceName,
 						Namespace: "default",
@@ -59,16 +59,16 @@ var _ = Describe("Countdown Controller", func() {
 
 		AfterEach(func() {
 			// TODO(user): Cleanup logic after each test, like removing the resource instance.
-			resource := &stabledwkv1.Countdown{}
+			resource := &stabledwkv1.DummySite{}
 			err := k8sClient.Get(ctx, typeNamespacedName, resource)
 			Expect(err).NotTo(HaveOccurred())
 
-			By("Cleanup the specific resource instance Countdown")
+			By("Cleanup the specific resource instance DummySite")
 			Expect(k8sClient.Delete(ctx, resource)).To(Succeed())
 		})
 		It("should successfully reconcile the resource", func() {
 			By("Reconciling the created resource")
-			controllerReconciler := &CountdownReconciler{
+			controllerReconciler := &DummySiteReconciler{
 				Client: k8sClient,
 				Scheme: k8sClient.Scheme(),
 			}
