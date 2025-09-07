@@ -1,5 +1,4 @@
 .idea/
 .vscode/
-*.sh
 demo-*/
 py-controller/
